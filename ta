@@ -1,0 +1,80 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local CloseButton = Instance.new("TextButton")
+local Button1M = Instance.new("TextButton")
+local ButtonMarketHack = Instance.new("TextButton")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Frame.Size = UDim2.new(0, 300, 0, 400)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -200)
+Frame.Active = true
+Frame.Draggable = true
+
+Title.Parent = Frame
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.Text = "HACKERMAN GUI V1"
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 16
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+CloseButton.Parent = Frame
+CloseButton.Size = UDim2.new(0, 30, 0, 30)
+CloseButton.Position = UDim2.new(1, -35, 0, 5)
+CloseButton.Text = "X"
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
+
+Button1M.Parent = Frame
+Button1M.Size = UDim2.new(0.9, 0, 0, 40)
+Button1M.Position = UDim2.new(0.05, 0, 0.15, 0)
+Button1M.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Button1M.Text = "1M OLMA"
+Button1M.Font = Enum.Font.GothamBold
+Button1M.TextSize = 16
+Button1M.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+Button1M.MouseButton1Click:Connect(function()
+    local playerGui = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
+    if playerGui then
+        local market = playerGui:FindFirstChild("Market")
+        if market and market:FindFirstChild("Frame") and market.Frame:FindFirstChild("Bilgi") then
+            local onur = market.Frame.Bilgi:FindFirstChild("Onur")
+            if onur and onur:IsA("TextLabel") then
+                onur.Text = "1M"
+            end
+        end
+    end
+end)
+
+ButtonMarketHack.Parent = Frame
+ButtonMarketHack.Size = UDim2.new(0.9, 0, 0, 40)
+ButtonMarketHack.Position = UDim2.new(0.05, 0, 0.3, 0)
+ButtonMarketHack.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ButtonMarketHack.Text = "MARKET HACK"
+ButtonMarketHack.Font = Enum.Font.GothamBold
+ButtonMarketHack.TextSize = 16
+ButtonMarketHack.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+ButtonMarketHack.MouseButton1Click:Connect(function()
+    local playerGui = game:GetService("Players").LocalPlayer:FindFirstChild("PlayerGui")
+    if playerGui then
+        local market = playerGui:FindFirstChild("Market")
+        if market and market:FindFirstChild("Frame") and market.Frame:FindFirstChild("Frames") then
+            local subayFrame = market.Frame.Frames:FindFirstChild("Subay")
+            if subayFrame and subayFrame:IsA("TextLabel") then
+                subayFrame.Text = "TA DÖVMECE"
+            end
+        end
+        if market and market:FindFirstChild("Frame") and market.Frame:FindFirstChild("Butonlar") then
+            local subayButton = market.Frame.Butonlar:FindFirstChild("Subay")
+            if subayButton and subayButton:IsA("TextButton") then
+                subayButton.Text = "TA DÖVMECE"
+            end
+        end
+    end
+end)
